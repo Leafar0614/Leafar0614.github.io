@@ -222,101 +222,10 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <a id="more"></a>
-<h2 id="Android系统架构"><a href="#Android系统架构" class="headerlink" title="Android系统架构"></a>Android系统架构</h2><p>首先，系统架构分为五层。从上到下依次是<strong>应用层</strong>、<strong>应用框架层</strong>、<strong>系统运行库层</strong>、<strong>硬件抽象层</strong> 和 <strong>Linux内核层</strong>。</p>
-<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>内置和非内置应用程序都属于应用层。</p>
-<h3 id="应用框架层（Java-Framework"><a href="#应用框架层（Java-Framework" class="headerlink" title="应用框架层（Java Framework)"></a>应用框架层（Java Framework)</h3><p>应用框架层为开发者提供了所需的API，平时开发就是调用这一层提供的API，由JAVA编写，一下是主要的组件：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">功能描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"> Activity Manager(活动管理器)</td>
-<td style="text-align:center">管理各个应用程序<strong>生命周期</strong> </td>
-</tr>
-<tr>
-<td style="text-align:center"> Location Manager(位置管理器)</td>
-<td style="text-align:center">提供定位功能服务 </td>
-</tr>
-<tr>
-<td style="text-align:center"> Package Manager(包管理器)</td>
-<td style="text-align:center">管理所有安装在系统中的应用程序 </td>
-</tr>
-<tr>
-<td style="text-align:center"> Notification Manager(通知管理器)</td>
-<td style="text-align:center">使得应用程序可以在状态栏中显示<strong>自定义的提示信息</strong> </td>
-</tr>
-<tr>
-<td style="text-align:center"> Resource Manager（资源管理器）</td>
-<td style="text-align:center">管理app使用的各种非代码资源(本地化字符串、图片、布局文件、颜色文件等) </td>
-</tr>
-<tr>
-<td style="text-align:center">Telephony Manager(电话管理器)</td>
-<td style="text-align:center">管理电话功能</td>
-</tr>
-<tr>
-<td style="text-align:center">Window Manager（窗口管理器）</td>
-<td style="text-align:center">管理所有开启的窗口程序</td>
-</tr>
-<tr>
-<td style="text-align:center">Content Providers（内容提供器）</td>
-<td style="text-align:center">不同应用程序之间数据共享</td>
-</tr>
-<tr>
-<td style="text-align:center">View System（视图系统）</td>
-<td style="text-align:center">构建应用程序的基本组件</td>
-</tr>
-</tbody>
-</table>
-<h3 id="系统运行库层（Native"><a href="#系统运行库层（Native" class="headerlink" title="系统运行库层（Native)"></a>系统运行库层（Native)</h3><p>这里分为两部分 分别为C/C++程序库和Android运行时库。</p>
-<h4 id="1-C-C-程序库"><a href="#1-C-C-程序库" class="headerlink" title="1.C/C++程序库"></a>1.C/C++程序库</h4><p>C/C++ 程序库能被Android系统中的不同组件使用，并通过应用程序框架为开发者提供服务，主要的C/C++程序库有：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">功能描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">OpenGL</td>
-<td style="text-align:center">3D绘图函数库 </td>
-</tr>
-<tr>
-<td style="text-align:center">Libc</td>
-<td style="text-align:center">从BSD继承来的标准C系统函数库，专门为基于嵌入式Linux的设备定制（不是太懂）</td>
-</tr>
-<tr>
-<td style="text-align:center">Media Framework</td>
-<td style="text-align:center">多媒体库，支持多种常用的音频、视频格式录制和回放。 </td>
-</tr>
-<tr>
-<td style="text-align:center">SQLite</td>
-<td style="text-align:center">轻型的关系型数据库库 </td>
-</tr>
-<tr>
-<td style="text-align:center">SGL</td>
-<td style="text-align:center">底层的2D图形渲染引擎 </td>
-</tr>
-<tr>
-<td style="text-align:center">SSL</td>
-<td style="text-align:center">安全套接层，是为网络通信提供安全及数据完整性的一种安全协议 </td>
-</tr>
-<tr>
-<td style="text-align:center">FreeType</td>
-<td style="text-align:center">字体引擎 </td>
-</tr>
-</tbody>
-</table>
-<h4 id="2-Android运行时库"><a href="#2-Android运行时库" class="headerlink" title="2.Android运行时库"></a>2.Android运行时库</h4><p>运行时库又分为<strong>核心库</strong>和<strong>ART</strong>(5.0之后，Dalvik虚拟机被ART取代)。<br><strong>核心库</strong>提供了JAVA语言大多数功能。<br>相较于JVM虚拟机，Dalvik是专门为移动设备定制的，允许在有限的内存中同时运行多个虚拟机的实例。并且每一个Dalvik应用作为一个独立的Linux进程执行。（独立的进程可以防止在虚拟机奔溃的时候其他程序被关闭）<br><strong>ART</strong>的机制与<strong>Dalvik</strong>有所不同。在<strong>Dalvik</strong>下，应用每次运行的时候，字节码都需要通过即时编译器转换为机器码，这会拖慢应用的运行效率，而在<strong>ART</strong>环境中，应用在第一次安装的时候，字节码就会预先编译成机器码，成为本地应用。</p>
-<h3 id="硬件抽象层（HAL）"><a href="#硬件抽象层（HAL）" class="headerlink" title="硬件抽象层（HAL）"></a>硬件抽象层（HAL）</h3><p>硬件抽象层是位于操作系统内核与硬件电路之间的接口层，目的在于将目的抽象化，为了保护硬件厂商知识产权，它隐藏了特定平台的硬件接口细节，将控制硬件的动作放在硬件抽象层中。为操作系统提供虚拟硬件平台，使其具有硬件无关性，可在多种平台上进行移植。</p>
-<h3 id="Linux内核层"><a href="#Linux内核层" class="headerlink" title="Linux内核层"></a>Linux内核层</h3><p>Android 的核心系统服务基于Linux 内核，在此基础上添加了部分Android专用的驱动。系统的安全性、内存管理、进程管理、网络协议栈和驱动模型等都依赖于该内核。</p>
-
+            <p><h2 id="Android系统架构"><a href="#Android系统架构" class="headerlink" title="Android系统架构"></a>Android系统架构</h2><p>首先，系统架构分为五层。从上到下依次是<strong>应用层</strong>、<strong>应用框架层</strong>、<strong>系统运行库层</strong>、<strong>硬件抽象层</strong> 和 <strong>Linux内核层</strong>。</p></p>
+            <p class="article-more-link">
+                <a href="/2017/09/27/system/#more">查看更多</a>
+            </p>
         
         </div>
         <footer class="article-footer">
