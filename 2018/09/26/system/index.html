@@ -12,8 +12,8 @@
 <meta property="og:url" content="http://yoursite.com/2018/09/26/system/index.html">
 <meta property="og:site_name" content="杨瑾龙的个人博客">
 <meta property="og:description" content="Android系统架构">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2018-09-27T08:18:39.551Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-09-27T08:28:03.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【近日所学】对Android系统架构的认识">
 <meta name="twitter:description" content="Android系统架构">
@@ -84,14 +84,14 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fas fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -103,11 +103,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -137,7 +137,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
                 </td>
@@ -157,16 +157,16 @@
             <h2 id="name">杨瑾龙</h2>
             <h3 id="title">Android开发</h3>
             <span id="location"><i class="fas fa-map-marker-alt" style="padding-right: 5px"></i>中国，上海</span>
-            <a id="follow" target="_blank" href="https://github.com/Leafar0614">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/Leafar0614">关注我</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 2
-                <span>posts</span>
+                <span>文章</span>
             </div>
             <div class="article-info-block">
                 2
-                <span>tags</span>
+                <span>标签</span>
             </div>
         </div>
         
@@ -227,7 +227,8 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h2 id="Android系统架构"><a href="#Android系统架构" class="headerlink" title="Android系统架构"></a>Android系统架构</h2><p>首先，系统架构分为五层。从上到下依次是<strong>应用层</strong>、<strong>应用框架层</strong>、<strong>系统运行库层</strong>、<strong>硬件抽象层</strong> 和 <strong>Linux内核层</strong>。</p>
+            <a id="more"></a>
+<h2 id="Android系统架构"><a href="#Android系统架构" class="headerlink" title="Android系统架构"></a>Android系统架构</h2><p>首先，系统架构分为五层。从上到下依次是<strong>应用层</strong>、<strong>应用框架层</strong>、<strong>系统运行库层</strong>、<strong>硬件抽象层</strong> 和 <strong>Linux内核层</strong>。</p>
 <h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>内置和非内置应用程序都属于应用层。</p>
 <h3 id="应用框架层（Java-Framework"><a href="#应用框架层（Java-Framework" class="headerlink" title="应用框架层（Java Framework)"></a>应用框架层（Java Framework)</h3><p>应用框架层为开发者提供了所需的API，平时开发就是调用这一层提供的API，由JAVA编写，一下是主要的组件：</p>
 <table>
@@ -390,7 +391,7 @@
 <nav id="article-nav">
     
         <a href="/2018/09/26/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
+            <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
                     第一篇文章，新的开始
@@ -416,7 +417,7 @@
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">recent</h3>
+        <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
@@ -467,7 +468,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">归档</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">2</span></li></ul>
         </div>
@@ -476,7 +477,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tags</h3>
+        <h3 class="widget-title">标签</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android系统架构/">Android系统架构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li></ul>
         </div>
@@ -485,7 +486,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
             <a href="/tags/Android系统架构/" style="font-size: 10px;">Android系统架构</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
         </div>
@@ -494,12 +495,12 @@
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
                 
                     <li>
-                        <a href="http://hexo.io">Hexo</a>
+                        <a href="http://longvolt.leanapp.cn">最近项目</a>
                     </li>
                 
             </ul>
